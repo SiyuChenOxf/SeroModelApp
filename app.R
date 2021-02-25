@@ -149,7 +149,7 @@ server<-function(input, output,session) {
         data2 = data.frame( t=t0(), value=mean(posx), upper= quantile(posx, probs = 0.75), lower = quantile(posx, probs = 0.25))
         
         output$plot <- renderPlot({
-            ymax_exposure<-ceiling(max(data1$upper2*10))/10
+            ymax_exposure<-ceiling(max(data1$upper1*10))/10
             p1<-ggplot(data1, aes(x=t, y = median, group = output, colour = output)) +
                 geom_line(size=lwd) +  ggtitle("Exposure & Seroprevalence")+
                 # geom_ribbon(aes(ymin=lower1, ymax=upper1, fill = output), alpha=0.2, colour = NA)+
@@ -297,7 +297,7 @@ server<-function(input, output,session) {
             
         output$plot2 <- renderPlot({
             
-            ymax_exposure<-ceiling(max(data1$upper2*10))/10
+            ymax_exposure<-ceiling(max(data1$upper1*10))/10
             
             p1<-ggplot(data1, aes(x=t, y = median, group = output, colour = output)) +
                 geom_line(size=lwd) +  ggtitle("Exposure & Seroprevalence")+
