@@ -43,7 +43,7 @@ ui<-fluidPage(
                          fileInput('datafile', 'Choose Template file',buttonLabel = "Upload template",accept=c('xlsx', '.xlsx')),
                          includeMarkdown("help_upload_template.md"),
                          
-                         sliderInput("input_n", "Time lag between seroconvert and serorevert",min = 30, max = 730, value = 161),
+                         sliderInput("input_n", "Time lag between seroconvert and serorevert",min = 30, max = 730, value = 193),
                          numericInput("input_sero", "unadjusted seroprevalence", value = 0.297,min = 0,max = 1,step = 0.001),
                          numericInput("kse", "sensitivity", value = 1,min = 0,max = 1,step = 0.001),
                          numericInput("ksp", "specificity", value = 0.975,min = 0,max = 1,step = 0.001),
