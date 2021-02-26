@@ -154,7 +154,7 @@ server<-function(input, output,session) {
                 geom_line(size=lwd) +  ggtitle("Exposure & Seroprevalence")+
                 # geom_ribbon(aes(ymin=lower1, ymax=upper1, fill = output), alpha=0.2, colour = NA)+
                 geom_ribbon(aes(ymin=lower2, ymax=upper2, fill = output), alpha=0.5, colour = NA)+
-                scale_y_continuous(breaks =  seq(from=0, to=ymax_exposure, by=0.1),limit = c(0, ymax_exposure))+
+                scale_y_continuous(breaks =  seq(from=0, to=ymax_exposure, by=ymax_exposure/5),limit = c(0, ymax_exposure))+
                 scale_x_date(breaks = as.Date(c("2020-01-01","2020-03-01", "2020-05-01", "2020-07-01","2020-09-01", "2020-11-01","2021-01-01")), labels=c("Jan","Mar", "May", "Jul","Sep","Nov","Jan"), limit = as.Date(c("2020-01-01","2021-01-31")))+
                 geom_pointrange(data=data2, aes(x=t,y=value,ymin=lower, ymax=upper), inherit.aes = FALSE, shape = 21, size=pt_size, colour = "black", fill = colors_Dark[2])
             styled1 <- p1 +
@@ -303,7 +303,7 @@ server<-function(input, output,session) {
                 geom_line(size=lwd) +  ggtitle("Exposure & Seroprevalence")+
                 geom_ribbon(aes(ymin=lower1, ymax=upper1, fill = output), alpha=0.2, colour = NA)+
                 geom_ribbon(aes(ymin=lower2, ymax=upper2, fill = output), alpha=0.5, colour = NA)+
-                scale_y_continuous(breaks =  seq(from=0, to=ymax_exposure, by=0.1),limit = c(0, ymax_exposure))+
+                scale_y_continuous(breaks =  seq(from=0, to=ymax_exposure, by=ymax_exposure/5),limit = c(0, ymax_exposure))+
                 scale_x_date(breaks = as.Date(c("2020-01-01","2020-03-01", "2020-05-01", "2020-07-01","2020-09-01", "2020-11-01","2021-01-01")), labels=c("Jan","Mar", "May", "Jul","Sep","Nov","Jan"), limit = as.Date(c("2020-01-01","2021-01-31")))+
                 geom_pointrange(data=data2, aes(x=t,y=value,ymin=lower, ymax=upper), inherit.aes = FALSE, shape = 21, size=pt_size, colour = "black", fill = colors_Dark[2])
             styled2<- p1 +
